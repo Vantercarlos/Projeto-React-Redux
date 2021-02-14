@@ -2,12 +2,21 @@ import React from 'react';
 
 class App extends React.Component {
   state = {
-    nome : 'Vantercarlos Caitano'
+    nome : ''
+  }
+
+  modificarNome = (event) => {
+    this.setState({
+      nome: event.target.value
+    })
   }
 
   render() {
     return(
+      <>
+      <input type="text" value={this.state.nome} onChange={this.modificarNome} />
       <h1>Bem vindo {this.state.nome}</h1>
+      </>
     )
   }
 }
